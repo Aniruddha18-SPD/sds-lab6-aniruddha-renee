@@ -14,3 +14,33 @@
  * limitations under the License.
  */
 
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    color: purple;
+  }
+
+  :placeholder-shown{
+      background-color: hotpink;
+  }
+  ::placeholder {
+    color: black;
+    font-size: 1.0em;
+    
+  }
+  input[type="text"]::placeholder {              
+    text-align: center;
+}
+body {
+    text-align:center;
+}
+
+input
+{
+
+Width:200px;
+
+height:200px;
+}
