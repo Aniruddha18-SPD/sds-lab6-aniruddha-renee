@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title> Welcome to Capitals of States Quiz! </title>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+
+    <body>
+        <h1> Here are your results </h1>
+        {% for cor, cor_val in corrects.items()%}
+        <p> Your answer for {{cor}} is {{cor_val}} </p>
+        {%endfor%}
+    </body>
+</html>

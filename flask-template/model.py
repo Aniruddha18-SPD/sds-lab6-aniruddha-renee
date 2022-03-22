@@ -12,3 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+def capital_checker(dicti):
+    correct_ans = {"New York": "Albany", "California": "Sacramento", "New Mexico": "Santa Fe", "Florida": "Tallahassee", "Michigan": "Lansing"}
+    return_dict = {}
+    for keys,values in dicti.items():
+        if values.lower() != correct_ans[keys].lower():
+            return_dict[keys] = "Incorrect"
+        else:
+            return_dict[keys] = "Correct"
+    return return_dict

@@ -14,12 +14,13 @@
 
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
+# Renee Catanach and Aniruddha Pokhrel
+
 print("testing push")
 from flask import Flask
-# from flask import render_template
-# from flask import request
-
-# Renee Catanach and Aniruddha Pokhrel 
+from flask import render_template
+from flask import request
+from model import capital_checker 
 
 # -- Initialization section --
 app = Flask(__name__)
@@ -29,4 +30,11 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def index():
-    return "hello world"
+    return render_template("index.html")
+
+
+@app.route('/results', methods = ['GET', 'POST'])
+def results():
+    answers = {"New York": request.form['New York'], "California": request.form['California'], "New Mexico": request.form['New Mexico'], "Florida": request.form['Florida'], "Michigan": request.form['Michigan']}
+    corrects = capital_checker(answers)
+    return render_template("results.html", corrects=corrects)
